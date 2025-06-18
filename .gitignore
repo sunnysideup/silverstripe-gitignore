@@ -1,7 +1,3 @@
-#############################################################
-# Added by Sunnysideup\\GitIgnore\nvendor/\nnode_modules/\n
-#############################################################
-
 # environment variables
 .env
 
