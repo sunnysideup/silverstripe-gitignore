@@ -1,7 +1,68 @@
-node_modules/
-/vendor/
-.DS_Store
+#############################################################
+# Added by Sunnysideup\\GitIgnore\nvendor/\nnode_modules/\n
+#############################################################
+
+# environment variables
+.env
+
+# executables
+*.app
+*.exe
+*.jar
+*.log
+
+# databases and paks
+*.sql
+*.sspak
+
+# composer
 composer.lock
+composer.phar
+
+# windows and mac stuff
+Thumbs.db
+.DS_Store
+
+# dev stuff
+.ddev
+.vscode
+
+# logs
+/logs
+
+# caching
+/silverstripe-cache/
+
+# graphql
+/.graphql-generated
+/.phpunit.result.cache
+/public/_graphql
+
+# SS resources
+/public/_resources/
+/public/resources/
+
+# SS assets
+/public/assets/
+
+# SS themes
+/themes/sswebpack_engine_only/
+
+# vendor
+/vendor/
+
+# front-end stuff
+node_modules/
 *.js.map
 *.css.map
 yarn-error.log
+
+# other
+/.solr
+/__backups
+/tmp
+/tmp*
+
+# release stuff
+/release.log
+/release_running
