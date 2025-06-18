@@ -61,4 +61,4 @@ yarn-error.log
 
 # release stuff
 /release.log
-/release_running
+/release-running

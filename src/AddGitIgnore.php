@@ -27,10 +27,18 @@ class AddGitIgnore implements Flushable
                     return;
                 }
 
-                // Keep content before the marker, if it exists
                 $before = explode($marker, $existing, 2)[0];
-                $before = trim($before);
-                $newContent = $before . "\n\n" . $marker . "\n\n" . $replacement;
+                $beforeLines = array_map('trim', explode("\n", $before));
+                $replacementLines = array_map('trim', explode("\n", $replacement));
+
+                // Remove from $before any lines that also exist in $replacement
+                $filteredBeforeLines = array_filter(
+                    $beforeLines,
+                    fn(string $line) => $line === '' || !in_array($line, $replacementLines, true)
+                );
+                $filteredBeforeLines = array_filter($filteredBeforeLines);
+
+                $newContent = implode("\n", $filteredBeforeLines) . "\n\n" . $marker . "\n\n" . $replacement;
 
                 file_put_contents($targetPath, $newContent);
             }
