@@ -12,7 +12,6 @@
 *.sspak
 
 # composer
-composer.lock
 composer.phar
 
 # windows and mac stuff
