@@ -47,6 +47,9 @@ Thumbs.db
 # vendor
 /vendor/
 
+# security
+/.htpasswd
+
 # front-end stuff
 node_modules/
 *.js.map
