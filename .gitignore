@@ -9,6 +9,7 @@
 
 # databases and paks
 *.sql
+*.sql.gz
 *.sspak
 
 # composer
