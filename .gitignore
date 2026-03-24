@@ -65,3 +65,6 @@ yarn-error.log
 # release stuff
 /release.log
 /release-running
+
+# ai agents
+.agents
