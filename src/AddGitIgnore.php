@@ -7,7 +7,7 @@ use SilverStripe\Core\Flushable;
 
 class AddGitIgnore implements Flushable
 {
-    private const GITIGNORE_MARKER = '# Below is auto-added by the SilverStripe Gitignore module, do not remove this line, do not change anything below.';
+    private const string GITIGNORE_MARKER = '# Below is auto-added by the SilverStripe Gitignore module, do not remove this line, do not change anything below.';
 
     public static function flush()
     {
@@ -27,8 +27,8 @@ class AddGitIgnore implements Flushable
                 }
 
                 $before = explode($marker, $existing, 2)[0];
-                $beforeLines = array_map('trim', explode("\n", $before));
-                $replacementLines = array_map('trim', explode("\n", $replacement));
+                $beforeLines = array_map(trim(...), explode("\n", $before));
+                $replacementLines = array_map(trim(...), explode("\n", $replacement));
 
                 // Remove from $before any lines that also exist in $replacement
                 $filteredBeforeLines = array_filter(
