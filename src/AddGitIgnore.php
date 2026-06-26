@@ -2,6 +2,7 @@
 
 namespace Sunnysideup\GitIgnore;
 
+use RuntimeException;
 use SilverStripe\Control\Director;
 use SilverStripe\Core\Flushable;
 
@@ -42,7 +43,7 @@ class AddGitIgnore implements Flushable
                 file_put_contents($targetPath, $newContent);
             }
         } else {
-            user_error('This module (sunnysideup/gitignore) should only be included as a dev dependency.', E_USER_ERROR);
+            throw new RuntimeException('This module (sunnysideup/gitignore) should only be included as a dev dependency.');
         }
     }
 }
